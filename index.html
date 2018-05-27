@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-once>{{ vueTitle }}</h1>
+        <h2>{{ vueTitle }}</h2>
+        <p>{{ sayHello() }} -
+            <a v-bind:href="lwgitHubLink" target=_blank>my GitHub!</a>
+        </p>
+        <hr>
+        <p v-html="finishedLink"></p>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
