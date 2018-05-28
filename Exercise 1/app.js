@@ -13,6 +13,9 @@ const app = new Vue({
     random: function(min, max) {
       let num = Math.floor(Math.random() * (max - min) + min);
       return num;
+    },
+    addYears: function(incrAmnt) {
+      this.age += incrAmnt;
     }
   }
 });

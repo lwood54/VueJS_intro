@@ -17,11 +17,20 @@
         </p>
         <hr>
         <p v-html="finishedLink"></p>
+        <hr>
+        <button v-on:click="increase(2, $event)">Counter</button>
+        <p>{{counter}}</p>
+        <hr>
+        <p v-on:mousemove="updateCoords">
+            Coordinates: ({{ x }}, {{ y }})
+            <span v-on:mousemove="option1EvStopper">--- Option 1: DEAD SPOT ---</span>
+            <span v-on:mousemove.stop.prevent="">*** Option 2: Dead Spot ***</span>
+        </p>
     </div>
 
     <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="./index.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="./index.js "></script>
 </body>
 
 </html>
