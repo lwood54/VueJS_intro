@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="sec2_lec23">
+        <button v-on:click="counter++">Increase</button>
+        <!-- shorthand for v-on: is just ' @ ' -->
+        <button @click="counter--">Decrease</button>
+        <button @click="secondCounter++">Increase Second Counter</button>
+        <p>Counter: {{counter}}</p>
+        <p>Result: {{result()}} || {{output}}</p>
+        <p>Second Counter: {{secondCounter}}</p>
+        <a v-bind:href="githubProfile">GitHub profile</a>
+        <!-- shorthand for v-bind: is just ' : ' -->
+        <a :href="codepenProfile">Codepen.io profile</a>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="./index_lec23.js "></script>
+</body>
+
+</html>
