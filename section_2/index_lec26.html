@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vue JS Section 2 Lesson 26</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./index_lec26.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <!-- on click, we switch the value of attachRed true to false or false to true
+        when that happens, the reactive Vue instance updates the data property 'attachRed',
+        then the class that has been bound with " : " updates the class settings to either
+        include red via true or false which is the value of attachRed -->
+        <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
+        <!-- we can change :class="{red: attachRed}" to "divClasses" which is a computed property -->
+        <div class="demo"></div>
+        <div class="demo"></div>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="./index_lec26.js "></script>
+</body>
+
+</html>
