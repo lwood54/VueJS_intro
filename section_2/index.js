@@ -31,6 +31,9 @@ var app = new Vue({
     },
     option1EvStopper: function(ev) {
       ev.stopPropagation();
+    },
+    alertMe: function() {
+      alert('Consider yourself alterted!');
     }
   }
 });
