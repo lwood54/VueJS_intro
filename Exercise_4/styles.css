@@ -57,5 +57,11 @@
 }
 
 .upsize {
-  height: 40px;
+  border: 5px solid orange;
+  height: 140px;
+}
+
+#ex5 {
+  border: 2px solid black;
+  height: 100px;
 }

@@ -27,19 +27,20 @@
     <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
     <div>
       <input type="text" placeholder="white, gray, or black" v-model="shadesOfGray">
-      <input type="text" placeholder="upsize - yes or no?" @keyup="makeBig">
-      <div :class="[shadesOfGray, makeBig]"></div>
+      <input type="text" placeholder="upsize - yes or no?" @keyup="increaseSize">
+      <div :class="[shadesOfGray,{upsize: choseUpSize}]"></div>
     </div>
     <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
-    <!-- <div>
-      <input type="text">
-      <div></div>
-    </div> -->
-    <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
-    <!-- <div>
-      <button v-on:click="startProgress">Start Progress</button>
-      <div></div>
-    </div> -->
+    <div>
+      <input type="text" placeholder="width: 100,200, or 400" v-model="width" @keyup="toggle = !toggle">
+      <div id="ex5" :style="[switchColor, {width: width + 'px'}]"></div>
+    </div>
+    <!-- 6) Create a simple progress bar with setInterval and style bindings.
+      Start it by hitting the below button. -->
+    <div>
+      <button @click="startProgress">Start Progress</button>
+      <div :style="progressBar"></div>
+    </div>
   </div>
 
   <script src="https://npmcdn.com/vue/dist/vue.js"></script>

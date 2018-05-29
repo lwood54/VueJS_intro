@@ -5,9 +5,25 @@ new Vue({
     currentClass: '',
     userClass: '',
     shadesOfGray: '',
-    upsize: false
+    choseUpSize: false,
+    width: 100,
+    toggle: false,
+    progressBarWidth: 0
   },
-  computed: {},
+  computed: {
+    switchColor: function() {
+      return {
+        backgroundColor: this.toggle ? 'orange' : 'maroon'
+      };
+    },
+    progressBar: function() {
+      return {
+        backgroundColor: 'blue',
+        height: '20px',
+        width: this.progressBarWidth + 'px'
+      };
+    }
+  },
   methods: {
     startEffect: function() {
       setInterval(() => {
@@ -15,10 +31,17 @@ new Vue({
           this.currentClass === 'highlight' ? 'shrink' : 'highlight';
       }, 2000);
     },
-    makeBig: function(ev) {
+    increaseSize: function(ev) {
       console.log(ev.target.value);
-      return (this.upsize =
-        ev.target.value.toLowerCase() === 'yes' ? true : false);
+      this.choseUpSize = ev.target.value.toLowerCase() === 'yes' ? true : false;
+    },
+    startProgress: function() {
+      setInterval(() => {
+        this.progressBarWidth += 5;
+        if (this.progressBarWidth >= 100) {
+          this.progressBarWidth = 0;
+        }
+      }, 1000);
     }
   }
 });
