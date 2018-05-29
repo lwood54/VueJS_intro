@@ -18,8 +18,10 @@
         include red via true or false which is the value of attachRed -->
         <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
         <!-- we can change :class="{red: attachRed}" to "divClasses" which is a computed property -->
-        <div class="demo"></div>
-        <div class="demo"></div>
+        <div class="demo" :class="{red: attachRed}"></div>
+        <div class="demo" :class="color"></div>
+        <hr>
+        <input type="text" v-model="color">
     </div>
 
     <!-- development version, includes helpful console warnings -->
