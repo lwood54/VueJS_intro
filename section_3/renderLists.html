@@ -34,13 +34,18 @@
         <hr>
         <!-- You can also do a double 'v-for' loop in order to access the values in an object instead of identifying them
         like I did above. -->
-        <template v-for="person in persons">
+        <template v-for="person in persons" :key="person.name">
+            <!-- Just like in React, it's a good idea to use a key when creating lists and using arrays. Especially because
+            the way that VueJS kind of helps us with tricks when manipulating the arrays. It looks at memory and index
+            position, but it will be much safer to use the key, which it can then reference instead of index. -->
             <div v-for="(value, key) in person">
                 <h4 :style="personKeyStyle">{{key}}: </h4>
                 <h2 :style="personValueStyle">{{value}}</h2>
             </div>
             <hr>
         </template>
+        <hr>
+        <span v-for="n in 10">{{n}}, </span>
     </div>
 
     <!-- development version, includes helpful console warnings -->

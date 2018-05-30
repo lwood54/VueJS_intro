@@ -1,0 +1,33 @@
+new Vue({
+  el: '#app',
+  data: {
+    array: ['Max', 'Anna', 'Chris', 'Manu'],
+    myObject: {
+      title: 'Lord of the Rings',
+      author: 'J.R.R. Tolkiens',
+      books: '3'
+    },
+    testData: {
+      name: 'TESTOBJECT',
+      id: 10,
+      data: [1.67, 1.33, 0.98, 2.21]
+    },
+    show: true
+  },
+  computed: {
+    keyStyle: function() {
+      return {
+        display: 'inline-block',
+        color: 'blue',
+        margin: '2px'
+      };
+    },
+    valueStyle: function() {
+      return {
+        display: 'inline-block',
+        color: 'green',
+        margin: '2px'
+      };
+    }
+  }
+});
