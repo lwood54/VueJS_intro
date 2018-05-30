@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- You can use 'v-for' to iterate through an array. You can then use the identified
+        variable to print the items. Also, if you want to access the index position, you can
+        do that by putting () around the item and adding ', i' or whatever variable name you want
+        for the index position. -->
+        <ul>
+            <li v-for="(ingredient, i) in ingredients">{{ ingredient }} ({{ i }})</li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="item in games">{{item}}</li>
+        </ul>
+        <hr>
+        <!-- What if you want to create some headings and description from an array instead of creating a list?
+        Then you can use a template to do that. -->
+        <template v-for="(person, index) in persons">
+            <h1>{{person.name}} </h1>
+            <h4>Age: {{person.age}} and Favorite Color: {{person.color}}</h4>
+            <p>index position: {{index}}</p>
+        </template>
+        <hr>
+        <!-- You can also do a double 'v-for' loop in order to access the values in an object instead of identifying them
+        like I did above. -->
+        <template v-for="person in persons">
+            <div v-for="(value, key) in person">
+                <h4 :style="personKeyStyle">{{key}}: </h4>
+                <h2 :style="personValueStyle">{{value}}</h2>
+            </div>
+            <hr>
+        </template>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src="./renderLists.js "></script>
+</body>
+
+</html>

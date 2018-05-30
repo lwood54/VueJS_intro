@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="mainLesson.css" />
+
+</head>
+
+<body>
+
+    <div id="app">
+        <p @click="show = !show" :style="{cursor: 'pointer'}">You can see me!</p>
+        <!-- 'v-if' will either totally remove or add the element to the DOM, it's not just hiding it -->
+        <p v-if="show">Do you also see me?</p>
+        <p v-else>Now you see me too!</p>
+
+        <!-- template is an html5 tag, the tag does not get rendered to the DOM
+        this can work similarly to a <div> but you might use this if you don't want the side
+        effects that might come with using a <div> -->
+        <template>
+            <p>Inside a template</p>
+        </template>
+        <hr>
+        <!-- This will use the style display:none and toggle between it being there or not -->
+        <p v-show="show">You can use 'v-show' instead of 'v-if'</p>
+
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src=" https://cdn.jsdelivr.net/npm/vue/dist/vue.js "></script>
+    <script src=" mainLesson.js "></script>
+</body>
+
+</html>
