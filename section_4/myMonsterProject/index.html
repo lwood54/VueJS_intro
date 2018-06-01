@@ -22,18 +22,18 @@
                     <div>
                         <h3 class="center-align">HEALTH</h3>
                         <div class="card-content white-text" :style="playerNamesStyle">
-                            <div class="left card blue col s3 m3 l3" :style="playerContainer">
+                            <div class="left card blue col s4 m3 l3" :style="playerContainer">
                                 <h3 class="center-align">You</h3>
                                 <div :style="playerProgress"></div>
                             </div>
-                            <div class="right card blue col s3 m3 l3" :style="monsterContainer">
+                            <div class="right card blue col s4 m3 l3" :style="monsterContainer">
                                 <h3 class="center-align">Monster</h3>
                                 <div :style="monsterProgress"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card-action">
+                    <div class="card-action center-align">
                         <button @click="attack">Attack</button>
                         <button>Special Attack</button>
                         <button>Heal</button>

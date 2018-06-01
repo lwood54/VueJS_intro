@@ -7,11 +7,13 @@ let app = new Vue({
       padding: '0%'
     },
     playerContainer: {
-      marginLeft: '10%'
+      marginLeft: '10%',
+      wordWrap: 'break-word'
     },
     playerProgressBar: 100,
     monsterContainer: {
-      marginRight: '10%'
+      marginRight: '10%',
+      wordWrap: 'break-word'
     },
     monsterProgressBar: 100
   },
