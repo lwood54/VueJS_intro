@@ -24,7 +24,10 @@
                         <div class="card-content white-text" :style="playerNamesStyle">
                             <div class="left card blue col s4 m3 l3" :style="playerContainer">
                                 <h3 class="center-align">You</h3>
-                                <div :style="playerProgress"></div>
+                                <div :style="bg-playerProgressContainer">
+                                    <div :style="playerProgress"></div>
+                                </div>
+
                             </div>
                             <div class="right card blue col s4 m3 l3" :style="monsterContainer">
                                 <h3 class="center-align">Monster</h3>

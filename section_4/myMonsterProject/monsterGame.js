@@ -21,8 +21,14 @@ let app = new Vue({
     playerProgress: function() {
       return {
         backgroundColor: 'blue',
+        borderRadius: '15px',
         height: '20px',
         width: this.playerProgressBar + '%'
+      };
+    },
+    'bg-playerProgressContainer': function() {
+      return {
+        backgroundColor: 'yellow'
       };
     },
     monsterProgress: function() {
