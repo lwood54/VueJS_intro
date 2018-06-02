@@ -1,7 +1,6 @@
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'hello Vue',
     playerNamesStyle: {
       height: '150px',
       padding: '0%'
@@ -20,34 +19,46 @@ let app = new Vue({
   computed: {
     playerProgress: function() {
       return {
-        backgroundColor: 'blue',
-        borderRadius: '15px',
+        borderRadius: '5px',
         height: '20px',
         width: this.playerProgressBar + '%'
       };
     },
-    'bg-playerProgressContainer': function() {
+    bgProgress: function() {
       return {
-        backgroundColor: 'yellow'
+        borderRadius: '5px',
+        marginBottom: '10px',
+        height: '20px'
       };
     },
     monsterProgress: function() {
       return {
-        backgroundColor: 'green',
+        borderRadius: '5px',
         height: '20px',
         width: this.monsterProgressBar + '%'
+      };
+    },
+    bgplayerProgress: function() {
+      return {
+        borderRadius: '5px',
+        marginBottom: '10px',
+        height: '20px'
       };
     }
   },
   methods: {
     attack: function() {
+      const randomPlayer = Math.floor(Math.random() * 4);
+      const randomMonster = Math.floor(Math.random() * 8);
+      this.playerProgressBar -= randomPlayer;
+      this.monsterProgressBar -= randomMonster;
       if (this.playerProgressBar <= 0 || this.monsterProgressBar <= 0) {
         this.playerProgressBar = 100;
         this.monsterProgressBar = 100;
-      } else {
-        this.playerProgressBar -= 5;
-        this.monsterProgressBar -= 6;
       }
-    }
+    },
+    special: function() {},
+    heal: function() {},
+    reset: function() {}
   }
 });
