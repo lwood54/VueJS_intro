@@ -10,6 +10,7 @@ let app = new Vue({
       wordWrap: 'break-word'
     },
     playerProgressBar: 100,
+    playerSpecialAttacksLeft: 3,
     monsterContainer: {
       marginRight: '10%',
       wordWrap: 'break-word'
@@ -55,9 +56,23 @@ let app = new Vue({
       if (this.playerProgressBar <= 0 || this.monsterProgressBar <= 0) {
         this.playerProgressBar = 100;
         this.monsterProgressBar = 100;
+        this.playerSpecialAttacksLeft = 3;
       }
     },
-    special: function() {},
+    special: function() {
+      if (this.playerSpecialAttacksLeft > 0) {
+        this.playerSpecialAttacksLeft -= 1;
+        const randomSpecial = Math.floor(Math.random() * 10);
+        const randomSpecialCost = Math.floor(Math.random() * 4);
+        this.playerProgressBar -= randomSpecialCost;
+        this.monsterProgressBar -= randomSpecial;
+      }
+      if (this.playerProgressBar <= 0 || this.monsterProgressBar <= 0) {
+        this.playerProgressBar = 100;
+        this.monsterProgressBar = 100;
+        this.playerSpecialAttacksLeft = 3;
+      }
+    },
     heal: function() {},
     reset: function() {}
   }
